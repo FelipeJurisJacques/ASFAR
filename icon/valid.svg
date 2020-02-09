@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+     width="30px" height="30px"
+     viewBox="0 0 30 30"
+     zoomAndPan="enable" >
+
+    <line x1="12" y1="20" x2="20" y2="5" style="stroke:#28A745;stroke-width:3"/>
+    <line x1="12" y1="20" x2="7" y2="12" style="stroke:#28A745;stroke-width:3"/>
+ 
+</svg>

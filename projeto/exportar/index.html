@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/input.css">
+    <link rel="stylesheet" type="text/css" href="../../css/log.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dialog.css">
+    <title>exportar</title>
+</head>
+
+<body>
+    <div id="header-hidden">
+        <b>Exportar projeto</b>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li onclick="window.location.reload()">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box">
+        <form>
+            <div class="field">
+                <input type="text" name="nome" id="nome" value="meu projeto" required>
+                <label for="nome">Nome do arquivo</label>
+            </div>
+            <button class="contained" type="submit">exportar dados</button>
+        </form>
+
+        <br>
+        <main></main>
+    </div>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>
