@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/input.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/obs.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/dialog.css">
+    <title>acidez do solo</title>
+</head>
+
+<body>
+    <div id="header">
+        <b id="headerTitle"></b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li id="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <table class="data2 details">
+        <thead>
+            <tr>
+                <th colspan="3">Amostra</th>
+            </tr>
+        </thead>
+        <tbody id="amostra"></tbody>
+    </table>
+
+    <table class="data2 details">
+        <thead>
+            <tr>
+                <th colspan="4">Laudo químico</th>
+            </tr>
+        </thead>
+        <tbody id="laudoQuimico"></tbody>
+    </table>
+
+
+    <form>
+        <fieldset class="card">
+            <legend>Correção da acidez do solo</legend>
+
+            <table class="data2 details">
+                <thead>
+                    <tr>
+                        <th colspan="3">Pacote de configuração</th>
+                    </tr>
+                </thead>
+                <tbody id="pacote"></tbody>
+            </table>
+
+            <table class="data2 details">
+                <thead>
+                    <tr>
+                        <th colspan="2">Tomada de decisão</th>
+                    </tr>
+                </thead>
+                <tbody id="decisao"></tbody>
+            </table>
+
+            <table class="data2 details">
+                <thead>
+                    <tr>
+                        <th colspan="2">Fórmula</th>
+                    </tr>
+                </thead>
+                <tbody id="formula"></tbody>
+            </table>
+
+            <div class="box">
+                <div id="formula">
+                    <input type="radio" class="field" name="formula" value="smp" id="smp"><label
+                        for="smp">SMP</label><br>
+                    <input type="radio" class="field" name="formula" value="sat" id="sat"><label for="sat">Saturação por
+                        bases</label><br>
+                    <input type="radio" class="field" name="formula" value="tha" id="tha"><label
+                        for="tha">t/ha</label><br>
+                </div>
+                <div id="smp">
+                    <div class="field">
+                        <input type="text" name="smp" />
+                        <label>SMP por aplicação</label>
+                    </div>
+                    <div class="field">
+                        <select name="smp">
+                            <option>5.5</option>
+                            <option>6</option>
+                            <option>6.5</option>
+                        </select>
+                        <label>pH desejado</label>
+                    </div>
+                </div>
+                <div id="sat">
+                    <div class="field">
+                        <input type="text" name="vreferencia" />
+                        <label>V referência</label>
+                    </div>
+                    <p>
+                        65% equivale a pH 5.5 <br>
+                        75% equivale a pH 6.0 <br>
+                        85% equivale a pH 6.5
+                    </p>
+                </div>
+                <div id="tha">
+                    <div class="field">
+                        <input type="text" name="tha" />
+                        <label>t/ha</label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="contained" type="button" id="reset">Redefinir</button>
+
+            <br><br>
+            <table class="data2">
+                <tbody>
+                    <tr id="correcaoAcidez"></tr>
+                    <tr>
+                        <td>sulfato de cálcio</td>
+                        <td class="field"><input type="text" name="gesso" /></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+
+            <div id="formulaobs"></div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Correção da fertilidade do solo</legend>
+            
+            <table class="data2">
+                <tbody>
+                    <tr>
+                        <td>nitrogênio</td>
+                        <td class="field"><input type="text" name="n" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>fósforo</td>
+                        <td class="field"><input type="text" name="p" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>potássio</td>
+                        <td class="field"><input type="text" name="k" /></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+
+        <div class="box">
+            <button class="contained" type="submit">salvar</button>
+        </div>
+    </form>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

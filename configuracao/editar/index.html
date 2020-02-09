@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/input.css">
+    <title>nova configuração</title>
+</head>
+
+<body>
+    <div id="header">
+        <b>Novo grupo de configurações</b>
+        <a class="back" data-href="../lista/index.html"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back" data-href="../lista/index.html">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <fieldset class="card">
+            <legend>Informações da configuração</legend>
+            <div class="grid">
+                <div class="field">
+                    <input name="titulo" type="text" id="titulo" required />
+                    <label for="titulo">Título *</label>
+                </div>
+
+                <div class="field">
+                    <input name="ano" type="number" id="ano" required />
+                    <label for="ano">Ano *</label>
+                    <span class="help">Ano do lançamento ou da edição</span>
+                </div>
+
+                <div class="field">
+                    <input name="autor" type="text" id="autor" required />
+                    <label for="autor">Autor *</label>
+                    <span class="help">Autor, editor ou organização responsável</span>
+                </div>
+
+                <div class="field">
+                    <select name="tipo" id="tipo" required>
+                        <option>pesquisa</option>
+                        <option>experimento</option>
+                        <option>instruções</option>
+                        <option>teste</option>
+                    </select>
+                    <label for="tipo">Tipo *</label>
+                </div>
+
+                <div class="field">
+                    <input name="regiao" type="text" id="regiao" required />
+                    <label for="regiao">Regiões *</label>
+                    <span class="help">Regiões ou estados onde se aplicam</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="box">
+            <label> * Campos obrigatório </label><br>
+            <button class="contained" type="submit">Salvar</button>
+        </div>
+    </form>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

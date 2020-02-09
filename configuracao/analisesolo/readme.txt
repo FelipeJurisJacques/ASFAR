@@ -1,0 +1,1 @@
+Esse diretorio representa os pacotes de configuracoes referentes a analise de solo

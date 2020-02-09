@@ -1,0 +1,1 @@
+Esse diretorio representa grupos de pacotes de confguracoes de todo o sistema

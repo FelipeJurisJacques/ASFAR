@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../../css/input.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dialog.css">
+    <title>análise de solo</title>
+</head>
+
+<body>
+    <div id="header">
+        <b id="headerTitle"></b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li id="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <div class="box">
+            <h3>Correção da acidez do solo <sub><small>se aplica a todas as amostras</small></sub></h3>
+        </div>
+
+        <fieldset class="card">
+            <legend>Produto</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input type="text" name="produto" />
+                    <label>Produto</label>
+                    <span class="help">Identificação do produto</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="prntproduto" />
+                    <label>PRNT</label>
+                    <span class="help">PRNT do produto</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="custoproduto" />
+                    <label>Valor</label>
+                    <span class="help">Custo do produto</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Aplicação</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <select name="aplicacao" id="aplicacaoModo" required>
+                        <option>Incorporado</option>
+                        <option>Superfícial</option>
+                    </select>
+                    <label for="aplicacaoModo">Modo *</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="aplicacaoArea" id="aplicacaoArea" list="aplicacaoAreaList">
+                    <label for="aplicacaoArea">Área</label>
+                    <datalist id="aplicacaoAreaList">
+                        <option>Área total</option>
+                        <option>Linha de plantio</option>
+                        <option>Área total (fertirrigação)</option>
+                        <option>Linha de plantio (fertirrigação)</option>
+                    </datalist>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+
+                <div class="field">
+                    <select name="aplicacaoProfundidade">
+                        <option value="-1"> tanto faz </option>
+                        <option value="0"> de 0cm </option>
+                        <option value="5"> de 5cm </option>
+                        <option value="10"> de 10cm </option>
+                        <option value="15"> de 15cm </option>
+                        <option value="20"> de 20cm </option>
+                        <option value="25"> de 25cm </option>
+                        <option value="30"> de 30cm </option>
+                        <option value="35"> de 35cm </option>
+                        <option value="40"> de 40cm </option>
+                        <option value="45"> de 45cm </option>
+                    </select>
+                    <label>Profundidade minima</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+
+                <div class="field">
+                    <select name="aplicacaoProfundidade">
+                        <option value="-1"> tanto faz </option>
+                        <option value="5"> a 5cm </option>
+                        <option value="10"> a 10cm </option>
+                        <option value="15"> a 15cm </option>
+                        <option value="20"> a 20cm </option>
+                        <option value="25"> a 25cm </option>
+                        <option value="30"> a 30cm </option>
+                        <option value="35"> a 35cm </option>
+                        <option value="40"> a 40cm </option>
+                        <option value="45"> a 45cm </option>
+                        <option value="50"> a 50cm </option>
+                    </select>
+                    <label>Profundidade máxima</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <textarea name="descrissao"></textarea>
+                <label>Descrição</label>
+                <span class="help">Instruções</span>
+            </div>
+        </fieldset>
+
+        <div class="box">
+            <button class="contained" type="submit">Salvar</button>
+        </div>
+    </form>
+
+    <button class="action add" id="add"></button>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

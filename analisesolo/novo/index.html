@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../../css/input.css">
+    <link rel="stylesheet" type="text/css" href="../../css/obs.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dialog.css">
+    <title>análise de solo</title>
+</head>
+
+<body>
+    <div id="header">
+        <b id="headerTitle"></b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li id="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <table class="data">
+            <thead>
+                <tr>
+                    <th colspan="3">CONFIGURAÇÃO</th>
+                </tr>
+            </thead>
+            <tbody id="configuracaoList"></tbody>
+        </table>
+
+        <table class="data">
+            <thead>
+                <tr>
+                    <th colspan="2">PACOTE DE CONFIGURAÇÃO PARA CORREÇÃO DA ACIDEZ DO SOLO</th>
+                </tr>
+            </thead>
+            <tbody id="acidezSoloList"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <div class="obs top">
+                            Você pode selecionar diferentes pacotes para uma mesma cultura com a mesma classe de
+                            grupo de culturas e com o mesmo sitema de manejo, porém em diferentes camadas de
+                            profundidade para realizar análises com maior precisão
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- <table class="data">
+            <thead>
+                <tr>
+                    <th colspan="2">PACOTE DE CONFIGURAÇÃO PARA CORREÇÃO DA FERTILIDADE DO SOLO</th>
+                </tr>
+            </thead>
+            <tbody id="fertilidadeSoloList"></tbody>
+        </table> -->
+
+        <div class="box">
+            <button class="contained" type="submit">Iniciar Análise</button>
+        </div>
+    </form>
+
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Novo pacote fertilidade</title>
+    <link rel="stylesheet" type="text/css" href="../../../../css/style.css">
+</head>
+
+<body>
+    <form>
+        <h3>Pacote de Configuração Para Correção da Fertilidade do Solo</h3>
+        <fieldset>
+            <legend>Identificação das características do pacote de configuração da cultura a ser aplicada</legend>
+            <label>Nome da cultura</label>
+            <input type="text" class="form-control" name="cultura" requeired>
+            <br>
+            <label>Classe</label>
+            <select class="form-control" name="classe">
+                <option value="grao" selected> Cultura de Grãos </option>
+                <option value="forrage"> Forragens </option>
+                <option value="horta"> Hortaliças, Tubérculos e Raízes </option>
+            </select>
+            <br>
+            <label>Ano de atualização (Ano de lançamento do manual)</label>
+            <input type="number" name="ano" class="form-control" placeholder="20XX" value="2016" required>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela de interpretação do teor de CTC<sub>pH7</sub></legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Classe</th>
+                        <th scope="col">Faixa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Média</th>
+                        <td>maior que <input name="nivelCtcph7[]" type="number" value="7.5" placeholder="cmolc/dm³"
+                                required /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alta</th>
+                        <td>maior que <input name="nivelCtcph7[]" type="number" value="15" placeholder="cmolc/dm³"
+                                required /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Muito alta</th>
+                        <td>maior que <input name="nivelCtcph7[]" type="number" value="30" placeholder="cmolc/dm³"
+                                required /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <fieldset>
+                <legend>Classe Média</legend>
+                <input name="nivelCtcph7[]" type="number" value="7.5" placeholder="cmolc/dm³" required id="ctcph7InputNivM" onchange="setFaixa(this, 'nmctcph7', 'ctcph7InputNivA')"/>
+                <div>faixa entre 0 e 0</div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Classe Alta</legend>
+                <input name="nivelCtcph7[]" type="number" value="7.5" placeholder="cmolc/dm³" required id="ctcph7InputNivA" onchange="setFaixa(this)"/>
+                <div>faixa entre 0 e 0</div>
+            </fieldset>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela de interpretação do teor de argila</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Classe</th>
+                        <th scope="col">Faixa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>maior que <input name="nivelArgila[]" type="number" value="20" placeholder="%" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>maior que <input name="nivelArgila[]" type="number" value="40" placeholder="%" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>maior que <input name="nivelArgila[]" type="number" value="60" placeholder="%" required />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela de interpretação do teor de matéria orgânica</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Classe</th>
+                        <th scope="col">Faixa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Média</th>
+                        <td>maior que <input name="nivelOrganica[]" type="number" value="2.5" placeholder="%"
+                                required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alta</th>
+                        <td>maior que <input name="nivelOrganica[]" type="number" value="5" placeholder="%" required />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela de interpretação do teor de fósforo (P)</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="5">
+                            <center>
+                                <select class="form-control" id="nivelP">
+                                    <option value="sn" selected> Preenchiento manual </option>
+                                    <option value="2016g1"> Grupo 1 - Manual 2016 </option>
+                                    <option value="2016g2"> Grupo 2 - Manual 2016 </option>
+                                    <option value="2016g3"> Grupo 3 - Manual 2016 </option>
+                                    <option value="2016g4"> Grupo 4 - Manual 2016 </option>
+                                </select>
+                            </center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col" rowspan="2">
+                            <center>Classe de<br>disponibilidade</center>
+                        </th>
+                        <th scope="col" colspan="4">
+                            <center>Classe de teor de argila</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <center>1</center>
+                        </th>
+                        <th scope="col">
+                            <center>2</center>
+                        </th>
+                        <th scope="col">
+                            <center>3</center>
+                        </th>
+                        <th scope="col">
+                            <center>4</center>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Muito baixo</th>
+                        <td>
+                            <=<input name="nivelPmb[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelPmb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPmb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPmb[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Baixo</th>
+                        <td>
+                            <=<input name="nivelPb[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelPb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPb[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Médio</th>
+                        <td>
+                            <=<input name="nivelPm[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelPm[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPm[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPm[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alto</th>
+                        <td>
+                            <=<input name="nivelPa[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelPa[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPa[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelPa[]" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Muito alto é interpretado automáticamente pelo sistema <br>
+                Peencha os campos á cima com os valores alinhados a direita da tabela do manual <br>
+                Dica: No manula de 2016, na linha 'Médio' os valores a serem inseridos estão em negrito
+            </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela de interpretação do teor de potásio (K)</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="5">
+                            <center>
+                                <select class="form-control" id="nivelK">
+                                    <option value="sn" selected> Preenchiento manual </option>
+                                    <option value="2016g1"> Grupo 1 - Manual 2016 </option>
+                                    <option value="2016g2"> Grupo 2 - Manual 2016 </option>
+                                    <option value="2016g3"> Grupo 3 - Manual 2016 </option>
+                                </select>
+                            </center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col" rowspan="2">
+                            <center>Classe de<br>disponibilidade</center>
+                        </th>
+                        <th scope="col" colspan="4">
+                            <center>CTC<sub>ph7</sub></center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <center>Baixo</center>
+                        </th>
+                        <th scope="col">
+                            <center>Médio</center>
+                        </th>
+                        <th scope="col">
+                            <center>Alto</center>
+                        </th>
+                        <th scope="col">
+                            <center>Muito Alto</center>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Muito baixo</th>
+                        <td>
+                            <=<input name="nivelKmb[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelKmb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKmb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKmb[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Baixo</th>
+                        <td>
+                            <=<input name="nivelKb[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelKb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKb[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKb[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Médio</th>
+                        <td>
+                            <=<input name="nivelKm[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelKm[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKm[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKm[]" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alto</th>
+                        <td>
+                            <=<input name="nivelKa[]" type="number" required />
+                        </td>
+                        <td>
+                            <=<input name="nivelKa[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKa[]" type="number" />
+                        </td>
+                        <td>
+                            <=<input name="nivelKa[]" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Muito alto é interpretado automáticamente pelo sistema <br>
+                Peencha os campos á cima com os valores alinhados a direita da tabela do manual <br>
+                Dica: No manula de 2016, na linha 'Médio' os valores a serem inseridos estão em negrito
+            </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela para aplicação de fósforo e potássio</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">Interpretação do teror de P e K</th>
+                        <th scope="col" colspan="2">
+                            <center>Fósforo (P)</center>
+                        </th>
+                        <th scope="col" colspan="2">
+                            <center>Potássion (K)</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <center>1º Cultivo</center>
+                        </th>
+                        <th scope="col">
+                            <center>2º Cultivo</center>
+                        </th>
+                        <th scope="col">
+                            <center>1º Cultivo</center>
+                        </th>
+                        <th scope="col">
+                            <center>2º Cultivo</center>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Muito Baixo</td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" required />
+                        </td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" required />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Baixo</td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" required />
+                        </td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" required />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Médio</td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" required />
+                        </td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" required />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alto</td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" required />
+                        </td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" required />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Muito Alto</td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" required />
+                        </td>
+                        <td><input name="aplicacaoP[]" type="number" placeholder="kg de P2O5/ha" />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" required />
+                        </td>
+                        <td><input name="aplicacaoK[]" type="number" placeholder="kg de K2O/ha" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Tabela para aplicação de nitrogênio</legend>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">Interpretação do matéria horgânica</th>
+                        <th scope="col" colspan="3">
+                            <select class="form-control" id="aplicacaoFertilidade">
+                                <option value="sn" selected> Sem cultura antecedente </option>
+                                <option value="grupo1"> Leguminosas e Gramíneas </option>
+                                <option value="grupo2"> Leguminosas, Gramíneas e Consorciação
+                                </option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr id="aplicacaoFertilidadeLabel">
+                        <th scope="col">
+                            <center>N</center>
+                        </th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Baixo</td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Médio</td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alto</td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                        <td><input name="aplicacaoN[]" type="number" placeholder="kg de N/ha" required disabled />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </fieldset>
+        <br>
+
+        <div class="alert alert-danger" role="alert">
+            Antes de salvar, revise os campos preenchidos e selecionados;
+            <br> Seus colegas de trabalho terão acesso a esse pacote de configurações.
+        </div>
+        <br>
+
+        <button type="reset" class="btn btn-secondary btn-lg btn-block">Limpar</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
+    </form>
+</body>
+
+<script type="text/javascript" src="../../../../script/form.js"></script>
+
+</html>

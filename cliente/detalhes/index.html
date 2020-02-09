@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dialog.css">
+    <title>cliente</title>
+</head>
+
+<body>
+    <div id="header">
+        <b></b>
+        <a class="back" data-href="../lista/index.html"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back" data-href="../lista/index.html">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <table class="data2 details">
+        <thead>
+            <tr>
+                <th colspan="2">Dados do cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Cliente</th>
+                <td id="cliente"></td>
+            </tr>
+            <tr>
+                <th>CPF</th>
+                <td id="cpf"></td>
+            </tr>
+            <tr>
+                <th>Matrícula</th>
+                <td id="matricula"></td>
+            </tr>
+            <tr>
+                <th>CEP</th>
+                <td id="cep"></td>
+            </tr>
+            <tr>
+                <th>Cidade</th>
+                <td id="cidade"></td>
+            </tr>
+            <tr>
+                <th>UF</th>
+                <td id="uf"></td>
+            </tr>
+            <tr>
+                <th>Localidade</th>
+                <td id="localidade"></td>
+            </tr>
+            <tr>
+                <th>Logradouro</th>
+                <td id="logradouro"></td>
+            </tr>
+            <tr>
+                <th>Número</th>
+                <td id="numero"></td>
+            </tr>
+            <tr>
+                <th>Bairro</th>
+                <td id="bairro"></td>
+            </tr>
+            <tr>
+                <th>Complemento</th>
+                <td id="complemento"></td>
+            </tr>
+            <tr>
+                <th>Telefone / Celular</th>
+                <td id="cell"></td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td><button class="contained red" id="excluir" type="button">excluir</button></td>
+                <td><button class="contained" id="editar" type="button">editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="data details">
+        <thead>
+            <tr>
+                <th colspan="2">Lista de talhões</th>
+            </tr>
+        </thead>
+        <tbody id="talhaoList"></tbody>
+    </table>
+
+    <a class="action add" id="novotalhao"></a>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

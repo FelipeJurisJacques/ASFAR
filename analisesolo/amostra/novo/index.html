@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/input.css">
+    <title>nova amostra</title>
+</head>
+
+<body>
+    <div id="header">
+        <b>Nova amostra de solo</b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <fieldset class="card">
+            <legend>Informações da amostra</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input type="text" name="amostra" required />
+                    <label>Amostra *</label>
+                </div>
+
+                <div class="field">
+                    <input type="date" name="entrada" required />
+                    <label>Entrada *</label>
+                </div>
+
+                <div class="field">
+                    <input type="date" name="emissao" required />
+                    <label>Emissão *</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="coletador" />
+                    <label>Coletador</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="empresa" />
+                    <label>Empresa emissora</label>
+                </div>
+
+                <div class="field">
+                    <select name="profundidade" id="profundidadeMin" required>
+                        <option value="0"> de 0cm </option>
+                        <option value="5"> de 5cm </option>
+                        <option value="10"> de 10cm </option>
+                        <option value="15"> de 15cm </option>
+                        <option value="20"> de 20cm </option>
+                        <option value="25"> de 25cm </option>
+                        <option value="30"> de 30cm </option>
+                        <option value="35"> de 35cm </option>
+                        <option value="40"> de 40cm </option>
+                        <option value="45"> de 45cm </option>
+                    </select>
+                    <label for="profundidadeMin">Profundidade minima *</label>
+                </div>
+
+                <div class="field">
+                    <select name="profundidade" id="profundidadeMax" required>
+                        <option value="5"> a 5cm </option>
+                        <option value="10"> a 10cm </option>
+                        <option value="15"> a 15cm </option>
+                        <option value="20"> a 20cm </option>
+                        <option value="25"> a 25cm </option>
+                        <option value="30"> a 30cm </option>
+                        <option value="35"> a 35cm </option>
+                        <option value="40"> a 40cm </option>
+                        <option value="45"> a 45cm </option>
+                        <option value="50"> a 50cm </option>
+                    </select>
+                    <label for="profundidadeMax">Profundidade máxima *</label>
+                </div>
+
+                <div class="field">
+                    <input type="file" name="file" accept=".kml" />
+                    <label>Localização</label>
+                    <span class="help">Enviar marcador (arquivo kml Google Earth)</span>
+                </div>
+
+                <div class="field">
+                    <input name="longitude" type="text" />
+                    <label>Longitude</label>
+                </div>
+
+                <div class="field">
+                    <input name="latitude" type="text" />
+                    <label>Latitude</label>
+                </div>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="field">
+                <textarea name="descricao" type="text"></textarea>
+                <label>Descrição</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Laudo químico</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input type="text" name="ph" />
+                    <label>pH água</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="smp" />
+                    <label>Índice SMP</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="alcmolcdm3" />
+                    <label>Al</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="halcmolcdm3" />
+                    <label>H + Al</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="alPercentage" />
+                    <label>Saturação por Al</label>
+                    <span class="help">%</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="vpercentage" />
+                    <label>V ou Saturação por Bases</label>
+                    <span class="help">%</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="ctcefetivacmolcdm3" />
+                    <label>CTCefetiva</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="ctcph7cmolcdm3" />
+                    <label>CTCpH7</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="cacmolcdm3" />
+                    <label>Ca</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="mgcmolcdm3" />
+                    <label>Mg</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="kmolcdm3" />
+                    <label>K</label>
+                    <span class="help">cmol<sup>c</sup>/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="kmgdm3" />
+                    <label>K</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="smgdm3" />
+                    <label>S</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="pmehlichmgdm3" />
+                    <label>P-Mehlich</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="presinamgdm3" />
+                    <label>P-resina</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="premmgdm3" />
+                    <label>P-rem</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="cumgdm3" />
+                    <label>Cu</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="znmgdm3" />
+                    <label>Zn</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="bmgdm3" />
+                    <label>B</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="femgdm3" />
+                    <label>Fe</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="mnmgdm3" />
+                    <label>Mn</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="ctotalmgdm3" />
+                    <label>C Total</label>
+                    <span class="help">mg/dm<sup>3</sup></span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="mopercentage" />
+                    <label>Matéria Orgânica</label>
+                    <span class="help">%</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="argilapercentage" />
+                    <label>Argila</label>
+                    <span class="help">%</span>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="textura" />
+                    <label>Textura</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="box">
+            <button class="contained" type="submit">salvar</button>
+        </div>
+    </form>
+
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

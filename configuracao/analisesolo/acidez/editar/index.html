@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/input.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/button.css">
+    <title>novo pacote de acidez</title>
+</head>
+
+<body>
+    <div id="header">
+        <b>Adicionar pacote de configuração para a correção da acidez do solo</b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <div class="box">
+            <p> Esse pacote de configuração é estimado para aplicação de calcario de PRNT 100%.
+                O PRNT pode ser alterado individualmente por projeto</p>
+
+            <!-- TODAS AS TABELAS SAO DIVIDIDAS POR CLASSES -->
+            <div class="field">
+                <input type="text" name="classe" id="classe" list="classeList" required>
+                <datalist id="classeList">
+                    <option>Grãos</option>
+                    <option>Forragens</option>
+                    <option>Hortaliças</option>
+                    <option>Tubérculos</option>
+                    <option>Raízes</option>
+                    <option>Frutíferas</option>
+                    <option>Espécies florestais</option>
+                    <option>Medicinais</option>
+                    <option>aromáticas</option>
+                    <option>Condimentares</option>
+                    <option>Ornamentais</option>
+                </datalist>
+                <label for="classe">Classe *</label>
+            </div>
+        </div>
+
+        <!-- ALGUMAS TABELAS POSSUEM CULTURAS ESPECIFICAS -->
+        <fieldset class="card">
+            <legend>Cultura</legend>
+
+            <div class="grid">
+                <div>
+                    <table class="data-full">
+                        <thead>
+                            <tr>
+                                <th colspan="3">Nome da cultura agrícola</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cultura">
+                            <tr>
+                                <td class="field">
+                                    <input type="text" name="cultura" list="culturas">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button class="add" type="button"></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Só preencha esses campos se nescessário</p>
+                </div>
+                <datalist id="culturas">
+                    <option>alfafa</option>
+                    <option>abacaxizeiro</option>
+                    <option>acácia negra</option>
+                    <option>alfavaca</option>
+                    <option>abacateiro</option>
+                    <option>abóbora</option>
+                    <option>alcachofra</option>
+                    <option>alface</option>
+                    <option>alho</option>
+                    <option>almeirão ameixeira</option>
+                    <option>amendoim</option>
+                    <option>amoreira preta</option>
+                    <option>araucária</option>
+                    <option>arroz de sequeiro</option>
+                    <option>arroz irrigado</option>
+                    <option>aspargo</option>
+                    <option>aveia</option>
+                    <option>bananeira</option>
+                    <option>batata</option>
+                    <option>batata doce</option>
+                    <option>beterraba</option>
+                    <option>bracatinga</option>
+                    <option>brócolo</option>
+                    <option>calêndula</option>
+                    <option>camomila</option>
+                    <option>cana de açúcar</option>
+                    <option>canola</option>
+                    <option>capim elefante</option>
+                    <option>caquizeiro</option>
+                    <option>cardamomo</option>
+                    <option>carqueja</option>
+                    <option>cebola</option>
+                    <option>cenoura</option>
+                    <option>cevada</option>
+                    <option>capim limão</option>
+                    <option>chá</option>
+                    <option>chicória</option>
+                    <option>citronela de java</option>
+                    <option>citros</option>
+                    <option>coentro</option>
+                    <option>curcuma</option>
+                    <option>consorciação de gramíneas</option>
+                    <option>couve flor</option>
+                    <option>crisântemo de corte</option>
+                    <option>erva doce</option>
+                    <option>erva mate</option>
+                    <option>ervilha</option>
+                    <option>estévia</option>
+                    <option>eucalipto</option>
+                    <option>feijão</option>
+                    <option>figueira</option>
+                    <option>fumo</option>
+                    <option>funcho</option>
+                    <option>gengibre</option>
+                    <option>girassol</option>
+                    <option>gramíneas forrageiras de estação fria</option>
+                    <option>gramíneas forrageiras de estação quente</option>
+                    <option>hortelã</option>
+                    <option>leguminosas de estação fria</option>
+                    <option>leguminosas de estação quente</option>
+                    <option>leguminosas forrageiras de estação fria</option>
+                    <option>leguminosas forrageiras de estação quente</option>
+                    <option>linho</option>
+                    <option>macieira</option>
+                    <option>mandioca</option>
+                    <option>manjericão</option>
+                    <option>maracujazeiro</option>
+                    <option>melancia</option>
+                    <option>melão</option>
+                    <option>milho</option>
+                    <option>mirtilo</option>
+                    <option>moranga</option>
+                    <option>morangueiro</option>
+                    <option>nectarineira</option>
+                    <option>nogueira pecã</option>
+                    <option>palma rosa</option>
+                    <option>pastagem natural</option>
+                    <option>painço</option>
+                    <option>pepino</option>
+                    <option>pereira</option>
+                    <option>pessegueiro</option>
+                    <option>pimentão</option>
+                    <option>pinus</option>
+                    <option>piretro</option>
+                    <option>quivizeiro</option>
+                    <option>rabanete</option>
+                    <option>repolho</option>
+                    <option>roseira de corte</option>
+                    <option>rúcula</option>
+                    <option>salsa</option>
+                    <option>soja</option>
+                    <option>sorgo</option>
+                    <option>tomate</option>
+                    <option>tremoço</option>
+                    <option>trigo</option>
+                    <option>triticale</option>
+                    <option>urucum</option>
+                    <option>vetiver</option>
+                    <option>videira</option>
+                </datalist>
+
+                <div class="field">
+                    <textarea name="culturaObs"></textarea>
+                    <label>Observação</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- ALGUMAS CLASSES POSSUI SUB DIVISAO DE SISTEMA DE MANEJO -->
+        <fieldset class="card">
+            <legend>Sistema de manejo</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <select name="manejo" id="manejo" required>
+                        <option>Plantio Direto</option>
+                        <option>Plantio Convencional</option>
+                        <option>Qualquer um</option>
+                    </select>
+                    <label for="manejo">Tipo de manejo *</label>
+                </div>
+
+                <div class="field">
+                    <textarea name="manejoObs"></textarea>
+                    <label>Observação</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Condição da área a ser cultivada</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input type="text" name="condicao" list="condicaoList">
+                    <label for="condicao">Condição</label>
+                    <datalist id="condicaoList">
+                        <option>Em todos os casos</option>
+                        <option>Implantação do sistema</option>
+                        <option>Sistema consolidado</option>
+                        <option>Semeadura em solo seco</option>
+                        <option>Pré-germinado</option>
+                        <option>Transplante de mudas</option>
+                        <option>Pré-germinado, Transplante de mudas</option>
+                        <option>Sistema consolidado, sem restrições na camada de 10cm a 20cm</option>
+                        <option>Sistema consolidado, com restrições na camada de 10cm a 20cm</option>
+                    </datalist>
+                </div>
+
+                <div class="field">
+                    <textarea name="condicaoObs"></textarea>
+                    <label>Observação</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Profundidade da amostra</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <select name="profundidade" id="profundidadeMin">
+                        <option value="0"> de 0cm </option>
+                        <option value="5"> de 5cm </option>
+                        <option value="10"> de 10cm </option>
+                        <option value="15"> de 15cm </option>
+                        <option value="20"> de 20cm </option>
+                        <option value="25"> de 25cm </option>
+                        <option value="30"> de 30cm </option>
+                        <option value="35"> de 35cm </option>
+                        <option value="40"> de 40cm </option>
+                        <option value="45"> de 45cm </option>
+                    </select>
+                    <label for="profundidadeMin">Profundidade minima *</label>
+                </div>
+
+                <div class="field">
+                    <select name="profundidade" id="profundidadeMax">
+                        <option value="5"> a 5cm </option>
+                        <option value="10"> a 10cm </option>
+                        <option value="15"> a 15cm </option>
+                        <option value="20"> a 20cm </option>
+                        <option value="25"> a 25cm </option>
+                        <option value="30"> a 30cm </option>
+                        <option value="35"> a 35cm </option>
+                        <option value="40"> a 40cm </option>
+                        <option value="45"> a 45cm </option>
+                        <option value="50"> a 50cm </option>
+                    </select>
+                    <label for="profundidadeMax">Profundidade máxima *</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <textarea name="profundidadeObs"></textarea>
+                <label>Observação</label>
+                <span class="help">Só preencha esse campo se nescessário</span>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Tomada de decisão</legend>
+
+            <table class="data-full">
+                <thead>
+                    <tr>
+                        <th colspan="7">Tomada de decisão favoravel *</th>
+                    </tr>
+                </thead>
+                <tbody id="decisao">
+                    <tr>
+                        <td class="field">
+                            <input name="decisao" list="laudo" required>
+                        </td>
+                        <td class="field">
+                            <select name="decisao" required>
+                                <option value="value">valor</option>
+                                <option value="percentage">%</option>
+                                <option value="cmolcdm3">cmolc/dm3</option>
+                                <option value="mgdm3">mg/dm3</option>
+                            </select>
+                        </td>
+                        <td class="field">
+                            <select name="decisao" required>
+                                <option selected>
+                                    <</option> <option>
+                                        <=</option> <option selected>>
+                                </option>
+                                <option>>=</option>
+                            </select>
+                        </td>
+                        <td class="field">
+                            <input name="decisao" type="number" step="0.001" required>
+                        </td>
+                        <td class="field">
+                            <select name="decisao" required>
+                                <option value="||" selected>OU</option>
+                                <option value="&&">E</option>
+                            </select>
+                        </td>
+                        <td class="field"></td>
+                        <td class="field">
+                            <button class="add" type="button"></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Elemento do laudo químico</td>
+                        <td>Unidade</td>
+                        <td>Operador lógico</td>
+                        <td>Operador condicional</td>
+                        <td>Operador de precedencia</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            Condição no qual se deve aplicar calcário
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            Preenchimento obrigatório
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+
+            <table class="data-full">
+                <thead>
+                    <tr>
+                        <th colspan="7">Tomada de decisão desfavoravel</th>
+                    </tr>
+                </thead>
+                <tbody id="contraDecisao">
+                    <tr>
+                        <td class="field">
+                            <input name="contraDecisao" list="laudo">
+                        </td>
+                        <td class="field">
+                            <select name="contraDecisao">
+                                <option value="value">valor</option>
+                                <option value="percentage">%</option>
+                                <option value="cmolcdm3">cmolc/dm3</option>
+                                <option value="mgdm3">mg/dm3</option>
+                            </select>
+                        </td>
+                        <td class="field">
+                            <select name="contraDecisao">
+                                <option selected>
+                                    <</option> <option>
+                                        <=</option> <option>>
+                                </option>
+                                <option>>=</option>
+                            </select>
+                        </td>
+                        <td class="field">
+                            <input name="contraDecisao" type="number" step="0.001">
+                        </td>
+                        <td class="field">
+                            <select name="contraDecisao">
+                                <option value="||" selected>OU</option>
+                                <option value="&&">E</option>
+                            </select>
+                        </td>
+                        <td class="field"></td>
+                        <td class="field">
+                            <button class="add" type="button"></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Elemento do laudo químico</td>
+                        <td>Unidade</td>
+                        <td>Operador lógico</td>
+                        <td>Operador condicional</td>
+                        <td>Operador de precedencia</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            Condição no qual não se deve aplicar calcário
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            Só preencha se nescessário
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+
+            <table class="data-full">
+                <thead>
+                    <tr>
+                        <th>Fórmula de tomada de decisão</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="decisaoGerada">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <datalist id="laudo">
+                <option>pH</option>
+                <option>V</option>
+                <option>Ca</option>
+                <option>Mg</option>
+                <option>SMP</option>
+                <option>Al</option>
+                <option>CTC</option>
+                <option>CTCph7</option>
+                <option>MO</option>
+                <option>argila</option>
+                <option>S</option>
+                <option>Pmehlich</option>
+                <option>Presina</option>
+                <option>Prem</option>
+                <option>K</option>
+                <option>Cu</option>
+                <option>Zn</option>
+                <option>B</option>
+                <option>Fe</option>
+                <option>Mn</option>
+                <option>C</option>
+            </datalist>
+
+            <div class="field">
+                <textarea name="decisaoObs"></textarea>
+                <label>Observação</label>
+                <span class="help">Só preencha esse campo se nescessário</span>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Quantidade de Calcário</legend>
+
+            <div class="field">
+                <select id="formula" required>
+                    <option value="smp">SMP</option>
+                    <option value="sat">Saturação por bases</option>
+                    <option value="ton">Toneladas por hectare</option>
+                </select>
+                <label for="formula">Fórmula *</label>
+                <span class="help">Selecione a fórmula para correção da acidez</span>
+                <span class="valid">Agora preencha os campos a seguir</span>
+            </div>
+
+            <div class="formulaSMP grid" style="display: none">
+                <div class="field">
+                    <input name="formulaSMP" type="number" step="0.001" id="formulaSMP" required disabled>
+                    <label for="formulaSMP">SMP por aplicação *</label>
+                    <span class="help">Quantidade de SPM a ser aplicado</span>
+                </div>
+
+                <div class="field">
+                    <select name="formulaSMP" id="formulaSMPpH" required disabled>
+                        <option>5.5</option>
+                        <option>6</option>
+                        <option>6.5</option>
+                    </select>
+                    <!-- <input name="formulaSMP" type="number" step="0.01" id="formulaSMPpH" required disabled> -->
+                    <label for="formulaSMPpH">pH *</label>
+                    <span class="help">pH desejado</span>
+                </div>
+            </div>
+
+            <div class="formulaSaturacaoBases grid" style="display: none">
+                <div class="field">
+                    <input name="formulaSaturacaoBases" type="number" step="0.01" id="formulaSaturacaoBases"
+                        list="formulaSaturacaoBasesList" placeholder="V%" required disabled>
+                    <label for="formulaSaturacaoBases">V *</label>
+                    <datalist id="formulaSaturacaoBasesList">
+                        <option>65</option>
+                        <option>75</option>
+                        <option>85</option>
+                    </datalist>
+                    <span class="help">Saturação por bases desejado</span>
+                </div>
+
+                <p class="legend">
+                    65% equivale a pH 5.5 <br>
+                    75% equivale a pH 6.0 <br>
+                    85% equivale a pH 6.5 <br>
+                    <br>
+                    A fórmula de saturação por bases "NC=[(Vdesejado% - V%) /100)] * CTC<sub>pH 7,0</sub>"
+                    lhe dará um valor em t/ha para PRNT a 100% em uma profundidade estimada de 0cm a 20cm
+                </p>
+            </div>
+
+            <div class="formulaTonelada grid" style="display: none">
+                <div class="field">
+                    <input name="formulaTonelada" type="number" step="0.001" id="formulaTonelada" required disabled>
+                    <label for="formulaTonelada">t/ha *</label>
+                    <span class="help">Não utilizado a partir do ROLAS de 2016</span>
+                </div>
+
+                <p class="legend">
+                    Eu não recomendo mas não me limito!
+                </p>
+            </div>
+
+            <div class="field">
+                <textarea name="formulaObs"></textarea>
+                <label>Observação</label>
+                <span class="help">Só preencha esse campo se nescessário</span>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Modo de Aplicação</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <select name="aplicacao" id="aplicacaoModo" required>
+                        <option>Incorporado</option>
+                        <option>Superfícial</option>
+                    </select>
+                    <label for="aplicacaoModo">Modo *</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="aplicacaoArea" id="aplicacaoArea" list="aplicacaoAreaList">
+                    <label for="aplicacaoArea">Área</label>
+                    <datalist id="aplicacaoAreaList">
+                        <option>Área total</option>
+                        <option>Linha de plantio</option>
+                        <option>Área total (fertirrigação)</option>
+                        <option>Linha de plantio (fertirrigação)</option>
+                    </datalist>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+
+                <div class="field">
+                    <select name="aplicacaoProfundidade">
+                        <option value="-1"> tanto faz </option>
+                        <option value="0"> de 0cm </option>
+                        <option value="5"> de 5cm </option>
+                        <option value="10"> de 10cm </option>
+                        <option value="15"> de 15cm </option>
+                        <option value="20"> de 20cm </option>
+                        <option value="25"> de 25cm </option>
+                        <option value="30"> de 30cm </option>
+                        <option value="35"> de 35cm </option>
+                        <option value="40"> de 40cm </option>
+                        <option value="45"> de 45cm </option>
+                    </select>
+                    <label>Profundidade minima</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+
+                <div class="field">
+                    <select name="aplicacaoProfundidade">
+                        <option value="-1"> tanto faz </option>
+                        <option value="5"> a 5cm </option>
+                        <option value="10"> a 10cm </option>
+                        <option value="15"> a 15cm </option>
+                        <option value="20"> a 20cm </option>
+                        <option value="25"> a 25cm </option>
+                        <option value="30"> a 30cm </option>
+                        <option value="35"> a 35cm </option>
+                        <option value="40"> a 40cm </option>
+                        <option value="45"> a 45cm </option>
+                        <option value="50"> a 50cm </option>
+                    </select>
+                    <label>Profundidade máxima</label>
+                    <span class="help">Só preencha esse campo se nescessário</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <textarea name="aplicacaoObs"></textarea>
+                <label>Observação</label>
+                <span class="help">Só preencha esse campo se nescessário</span>
+            </div>
+        </fieldset>
+
+        <div class="box">
+            <p> * Campos obrigatório </p>
+            <button class="contained" type="submit">Salvar</button>
+        </div>
+    </form>
+</body>
+
+<script type="module" src="./javascript.js"></script>
+
+</html>

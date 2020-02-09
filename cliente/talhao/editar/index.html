@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/input.css">
+    <title>novo talhão</title>
+</head>
+
+<body>
+    <div id="header">
+        <b></b>
+        <a class="back"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <fieldset class="card">
+            <legend>Informações de identificação</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input name="nome" type="text" value="gleba" required />
+                    <label>Nome *</label>
+                    <span class="help">Nome de identificação do talhão</span>
+                </div>
+
+                <div class="field">
+                    <select name="matricula" id="matricula" required></select>
+                    <label for="matricula">Matrícula *</label>
+                    <span class="help">Matrícula do território</span>
+                </div>
+                <div class="field">
+                    <input name="area" type="text" id="area" placeholder="ha">
+                    <label for="area">Área</label>
+                    <span class="help">Padão 1ha</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Informações de geografia</legend>
+
+            <div class="grid">
+                <div class="field">
+                    <input type="file" name="file" accept=".kml">
+                    <label>Dimensões da área</label>
+                    <span class="help">Enviar polígno (arquivo kml Google Earth)</span>
+                </div>
+                <div class="field">
+                    <input name="longitude" type="text" />
+                    <label>Longitude</label>
+                </div>
+                <div class="field">
+                    <input name="latitude" type="text" />
+                    <label>Latitude</label>
+                </div>
+                <div class="field">
+                    <input name="elevacao" type="text" />
+                    <label>Elevação</label>
+                    <span class="help">Relativo ao nível do mar</span>
+                </div>
+            </div>
+
+            <br>
+            <div id="map"></div>
+        </fieldset>
+
+        <div class="box">
+            <p> * Campos obrigatório </p>
+            <button class="contained" type="submit">Salvar</button>
+        </div>
+    </form>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>

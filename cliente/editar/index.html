@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../icon/file.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/card.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../../css/input.css">
+    <title>novo cliente</title>
+</head>
+
+<body>
+    <div id="header">
+        <b>Novo cliente</b>
+        <a class="back" data-href="../lista/index.html"></a>
+        <div class="menu" tabindex="0">
+            <div class="trigger"></div>
+            <ul>
+                <li class="back" data-href="../lista/index.html">Voltar</li>
+                <li data-href="reload">Recarregar</li>
+            </ul>
+        </div>
+    </div>
+
+    <form>
+        <fieldset class="card">
+            <legend>Identificação</legend>
+            <div class="grid">
+                <div class="field">
+                    <input name="nome" type="text" required />
+                    <label>Nome *</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="sobrenome" type="text" required />
+                    <label>Sobrenome *</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="cpf" type="text" required />
+                    <label>CPF *</label>
+                    <span class="help">Apenas números</span>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="matricula" type="text" placeholder="Ex: 0000, 5555" required />
+                    <label>Matrículas *</label>
+                    <span class="help">Se houver mais de um, separe com vírgola</span>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Endereço</legend>
+            <div class="grid">
+                <div class="field">
+                    <input name="cep" type="text" required />
+                    <label>Cep *</label>
+                    <span class="invalid">Cep inválid</span>
+                </div>
+
+                <div class="field">
+                    <input name="cidade" type="text" disabled required />
+                    <label>Município</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="uf" type="text" disabled required />
+                    <label>Estado</label>
+                    <span class="invalid">Estado inválido</span>
+                </div>
+
+                <div class="field">
+                    <input name="localidade" type="text" required />
+                    <label>Localidade do Imóvel *</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="logradouro" type="text" list="logradouros" required />
+                    <label>Logradouro *</label>
+                    <datalist id="logradouros">
+                        <option value="área">
+                        <option value="campo">
+                        <option value="chácara">
+                        <option value="colônia">
+                        <option value="fazenda">
+                        <option value="jardim">
+                        <option value="ladeira">
+                        <option value="lago">
+                        <option value="lagoa">
+                        <option value="largo">
+                        <option value="loteamento">
+                        <option value="morro">
+                        <option value="núcleo">
+                        <option value="parque">
+                        <option value="pátio">
+                        <option value="quadra">
+                        <option value="recanto">
+                        <option value="sítio">
+                        <option value="trecho">
+                        <option value="vale">
+                        <option value="vereda">
+                    </datalist>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="numero" type="text" />
+                    <label>Número</label>
+                    <span class="invalid">Insira números</span>
+                </div>
+
+                <div class="field">
+                    <input name="bairro" type="text" value="INTERIOR" required />
+                    <label>Bairro *</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="complemento" type="text" />
+                    <label>Complemento</label>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="card">
+            <legend>Contato</legend>
+            <div class="grid">
+                <div class="field">
+                    <input name="cell" type="text" placeholder="Telefone, Celular" />
+                    <label>Telefones / Celulares</label>
+                    <span class="help">Se houver mais de um, separe com vírgola</span>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+
+                <div class="field">
+                    <input name="email" type="text" placeholder="E-mail 1, E-mail 2" />
+                    <label>Endereços de email</label>
+                    <span class="help">Se houver mais de um, separe com vírgola</span>
+                    <span class="invalid">Caracteres insuficiente</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="box">
+            <p> * Campos obrigatório </p>
+            <button class="contained" type="submit">Salvar</button>
+        </div>
+    </form>
+</body>
+
+<script type="module" src="javascript.js"></script>
+
+</html>
