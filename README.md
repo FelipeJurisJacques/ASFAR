@@ -33,3 +33,6 @@ Seu layout foi completamente desenvolvido para se comportar como um software mul
 
 Esse trabalho está disponível na biblioteca do Instituto Federal Farroupilha do Campus Panambi-RS para estudos e aprimoramento de qualquer colaborador que queira continuar esse feito;
 
+Esse software também está disponvel no Firebase https://asfar-75d0f.firebaseapp.com/
+
+Para mais detalhes acesse a documentação https://iffarroupilhaedubr-my.sharepoint.com/:b:/g/personal/felipe_jacques_aluno_iffar_edu_br/EVq55Q265TpEhiyDsvxCMtQBt6EUlrnJn3qeb0mp4T3qKA?e=7Em1dY
