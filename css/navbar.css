@@ -1,0 +1,181 @@
+:root {
+    --navbar-background: #37373F;
+    --navbar-button-background: #355;
+    --navbar-button-selected: #4F8F8F;
+    --navbar-button-hover: #4F8F8F;
+    --navbar-button-font: #D9D9D9;
+    --navbar-button-border: 0;
+}
+
+div.navbar {
+    background-color: var(--navbar-background);
+    outline: none;
+}
+
+div.navbar .content,
+div.navbar .content div{
+    width: 100%;
+}
+
+div.navbar .content {
+    height: 100%;
+}
+
+div.navbar button.tab {
+    background-color: var(--navbar-button-background);
+    color: var(--navbar-button-font);
+    border: var(--navbar-button-border);
+    height: 100%;
+    text-align-last: left;
+    outline: none;
+    cursor: pointer;
+    word-wrap: break-word; 
+}
+
+div.navbar button.tab:hover {
+    background-color: var(--navbar-button-hover);
+    box-shadow: 0px 0px 8px #000A;
+}
+
+div.navbar button.tab.selected{
+    background-color: var(--navbar-button-selected);
+}
+    
+div.navbar button.tab div {
+    content: url('../icon/close.svg');
+    float: right;
+}
+
+iframe.unselected,
+iframe.loading {
+    display: none;
+}
+
+
+/* SE SUPERIOR A SVGA */
+@media screen and (min-width: 801px) {
+    div.navbar {
+        height: 36px;
+    }
+
+    div.navbar .content div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 0.2fr));
+        grid-template-rows: 100%;
+        grid-column-gap: 2px;
+        height: 100%;
+    }
+    
+    div.navbar button.tab {
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+
+    div.navbar div.trigger {
+        display: none;
+    }
+}
+
+
+/* SE IGUAL OU INFERIOR A SVGA E IGUAL OU SUPERIOR A VGA*/
+@media screen and (max-width: 800px) and (min-width: 640px) {
+    div.navbar {
+        width: calc(250px - 4px);
+        padding: 2px;
+        transform: translate3d(250px, 0, 0);
+    }
+
+    div.navbar button.tab {
+        border-radius: 0;
+        width: calc(100% - 4px);
+    }
+}
+
+
+/* SE INFERIOR A VGA*/
+@media screen and (max-width: 639px){
+    div.navbar {
+        width: calc(100% - 40px);
+        padding: 2px;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    div.navbar button.tab {
+        border-radius: 0;
+        width: calc(100% - 4px);
+    }
+}
+
+
+/* SE IGUAL OU INFERIOR A SVGA*/
+@media screen and (max-width: 800px){
+    div.navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 4;
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+        transition: all 0.2s ease-out;
+    }
+
+    div.navbar div.content{
+        position: fixed;
+        overflow-y: auto;
+    }
+
+    div.navbar div.trigger {
+        position: fixed;
+        content: url('../icon/navbar.svg');
+        top: 16px;
+        left: -40px;
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+
+    div.navbar:focus {
+        transform: translate3d(0, 0, 0);
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+    }
+
+    div.navbar:focus div.trigger {
+        pointer-events: none;
+        display: none;
+    }
+    
+    div.navbar button.tab {
+        height: 40px;
+        margin-bottom: 2px;
+    }
+}
+
+/* MAUSE */
+@media (hover: hover) and (pointer: fine) {
+    div.navbar button.tab div {
+        width: 20px;
+        height: 20px;
+        display: none;
+    }
+
+    div.navbar button.tab:hover div {
+        display: block;
+    }
+}
+
+/* TOUCH OU CANETA */
+@media (hover: none){
+    div.navbar button.tab div {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* CONTROLE */
+@media (hover: hover) and (pointer: coarse) {
+    div.navbar button.tab div {
+        width: 36px;
+        height: 36px;
+    }
+}
+  

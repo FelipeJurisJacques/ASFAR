@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+     width="30px" height="30px"
+     viewBox="0 0 30 30"
+     zoomAndPan="enable" >
+
+     <circle cx="15" cy="8" r="7" fill="silver"/>
+     <circle cx="15" cy="30" r="15" fill="silver"/>
+ 
+</svg>

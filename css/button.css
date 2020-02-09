@@ -1,0 +1,262 @@
+:root {
+    --button-background: #3F3F49;
+    --button-hover: #424250;
+    --button-font: #FFF;
+}
+
+/* TODOS OS BOTOES */
+
+button.contained,
+button.text,
+a.text,
+label.text,
+label.contained,
+input.contained[type=file]::-webkit-file-upload-button {
+    font-family: Roboto,sans-serif;
+    font-size: 13.3333px;
+    font-weight: 400;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* CONTAINED */
+
+button.contained,
+label.contained,
+input.contained[type=file]::-webkit-file-upload-button {
+    background-color: var(--button-background);
+    color: var(--button-font);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+/* default */
+button.contained:not(.red),
+label.contained:not(.red),
+input.contained[type=file]:not(.red)::-webkit-file-upload-button {
+    background-color: var(--button-background);
+}
+
+/* red */
+button.contained.red,
+label.contained.red,
+input.contained[type=file].red {
+    background-color: #FF4081;
+}
+
+/* TEXT */
+
+button.text:not(.red),
+a.text:not(.red),
+label.text:not(.red) {
+    background-color: transparent;
+    color: #3F51B5;
+}
+
+button.text.red,
+a.text.red,
+label.text.red {
+    background-color: transparent;
+    color: #FF4081;
+}
+
+
+/* INPUT FILE */
+input.contained[type=file] {
+    background-color: inherit;
+    color: inherit;
+    font-family: Roboto,sans-serif;
+    font-size: 13.3333px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    z-index: 1;
+}
+
+/* BOTAO DE ACAO PRINCIPAL */
+
+a.action,
+label.action,
+button.action {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+}
+
+
+/* BOTAO GRANDE */
+
+button.contained,
+button.text,
+a.text,
+label.text,
+label.contained,
+input.contained[type=file]::-webkit-file-upload-button {
+    border-radius: 2px;
+    height: 36px;
+    padding: 11px 16px;
+}
+
+
+/* BOTOES DE ACOENS */
+
+a.add,
+label.add,
+button.add,
+a.up,
+label.up,
+button.up,
+a.donw,
+label.donw,
+button.donw {
+    background-color: var(--button-background);
+    width: 56px;
+    height: 56px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+    z-index: 1;
+}
+
+a.add,
+label.add,
+button.add,
+table.data tbody tr td button.add,
+table.data-full tbody tr td button.add {
+    background-image: url('../icon/addition.svg');
+}
+
+table.data tbody tr td button.del,
+table.data-full tbody tr td button.del {
+    background-image: url('../icon/delete.svg');
+}
+
+a.donw,
+label.donw,
+button.donw {
+    position: absolute;
+    bottom: 16px;
+    left: calc(50% - 28px);
+    background-image: url('../icon/donw.svg');
+}
+
+a.up,
+label.up,
+button.up {
+    position: absolute;
+    bottom: 16px;
+    left: calc(50% - 28px);
+    background-image: url('../icon/up.svg');
+}
+
+
+/* RIPPLE */
+
+.ripple {
+    position: absolute;
+    background: rgba(0,0,0,.25);
+    border-radius: 100%;
+    pointer-events: none;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);  
+}
+
+.ripple.show {
+    -webkit-animation: ripple .45s ease-out;
+    animation: ripple .45s ease-out;
+}
+
+@-webkit-keyframes ripple { 
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple { 
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* BOTOES EM TABELAS */
+
+table.data tbody tr td button.add,
+table.data-full tbody tr td button.add,
+table.data tbody tr td button.del,
+table.data-full tbody tr td button.del {
+    background-color: var(--button-background);
+    width: 36px;
+    height: 28px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+    z-index: 1;
+}
+
+table.data tbody tr td button.add,
+table.data-full tbody tr td button.add {
+    background-color: var(--button-background);
+}
+
+table.data tbody tr td button.del,
+table.data-full tbody tr td button.del {
+    background-color: #FF4081;
+} 
+
+
+/* BUTTONS FOCUS */
+
+a.up:focus,
+label.up:focus,
+button.up:focus,
+a.donw:focus,
+label.donw:focus,
+button.donw:focus,
+a.action:focus,
+label.action:focus,
+button.action:focus,
+button.contained:focus,
+label.contained:focus,
+input.contained[type=file]::-webkit-file-upload-button:focus,
+table.data tbody tr td button.add:focus,
+table.data-full tbody tr td button.add:focus {
+    background-color: var(--button-hover); 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+button.text:focus,
+a.text:focus,
+label.text:focus {
+    background-color: #E9DDF9; 
+}
+
+table.data tbody tr td button.del:focus,
+table.data-full tbody tr td button.del:focus {
+    background-color: #FF79A7; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

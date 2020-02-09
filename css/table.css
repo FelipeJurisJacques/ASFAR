@@ -1,0 +1,110 @@
+table.data,
+table.data2,
+table.data-full {
+    font-size: 13px;
+    overflow: hidden;
+}
+
+table.data {
+    border-collapse: collapse;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+table.data2 {
+    border-collapse: collapse;
+}
+
+table.data-full {
+    margin: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.data th,
+table.data2 th,
+table.data-full th,
+table.data td:not(.field),
+table.data2 td:not(.field),
+table.data-full td:not(.field) {
+    padding: 12px 18px 12px 18px;
+    text-align: left;
+}
+
+table.data thead th,
+table.data2 thead th,
+table.data-full thead th {
+    font-size: 16px;
+    text-align: center;
+}
+
+table.data.details thead th,
+table.data2.details thead th,
+table.data-full.details thead th {
+    text-align: left;
+}
+
+table.data.details tbody th,
+table.data2.details tbody th,
+table.data-full.details tbody th {
+    text-align: right;
+    font-weight: normal;
+    width: 130px;
+}
+
+table.data.details tbody td,
+table.data2.details tbody td,
+table.data-full.details tbody td {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.data tr,
+table.data2 tr,
+table.data-full tr {
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+table.data thead tr:first-child,
+table.data2 thead tr:first-child,
+table.data-full thead tr:first-child {
+    border-top: none;
+}
+
+table.data tr div.details,
+table.data2 tr div.details,
+table.data-full tr div.details {
+    display: none;
+}
+
+table.data tr:focus div.details,
+table.data2 tr:focus div.details,
+table.data-full tr:focus div.details {
+    display: block;
+}
+
+table.data tr:focus div.summary,
+table.data2 tr:focus div.summary,
+table.data-full tr:focus div.summary {
+    display: none;
+}
+
+/* SE SURERIOR A VGA*/
+@media screen and (min-width: 640px) {
+    table.data,
+    table.data2 {
+        margin: 24px;
+        width: calc(100% - 48px);
+    }
+}
+
+/* SE INFERIOR A VGA*/
+@media screen and (max-width: 639px){
+    table.data,
+    table.data2 {
+        margin: 12px;
+        width: calc(100% - 24px);
+    }
+}

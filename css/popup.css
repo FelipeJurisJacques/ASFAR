@@ -1,0 +1,96 @@
+:root {
+    --popup-background: #555A;
+    --popup-font: #D9D9D9;
+    --popup-border: 1px solid #0AF;
+}
+
+div#popup {
+    position: fixed;
+    top: 35px;
+    right: -270px;
+    width: 260px;
+    height: 70px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    z-index: 1;
+    background-color: var(--popup-background);
+    color: var(--popup-font);
+    border: var(--popup-border);
+}
+
+div#popup #content {
+    position: absolute;
+    top: 5px;
+    left: 46px;
+    width: 173px;
+    height: 60px;
+    font-size: 10pt;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Roboto,sans-serif;
+    font-size: 13.3333px;
+    font-weight: 400;
+    color: inherit;
+}
+
+
+/* ICONE */
+
+div#popup div#icon {
+    float: left;
+    width: 36px;
+    height: 36px;
+    margin: 5px;
+    margin-top: 17px;
+}
+
+div#popup div#icon/*.success*/ {
+    content: url('../icon/popupSuccess.svg');
+}
+
+div#popup div#icon.alert {
+    content: url('../icon/popupAlert.svg');
+}
+
+div#popup div#icon.error {
+    content: url('../icon/popupError.svg');
+}
+
+
+/* BOTOES */
+
+div#popup.active {
+    transform: translate3d(-270px, 0, 0);
+}
+
+div#popup div#close {
+    float: right;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 70px;
+    background-color: #0002;
+    content: url('../icon/popupClose.svg');
+    outline: none;
+}
+    
+div#popup div#close:hover {
+    background-color: #0004;
+}
+
+div#popup div#close:focus{
+    -webkit-animation-name: click;
+    -webkit-animation-duration: 4s;
+    animation-name: click;
+    animation-duration: 0.1s;
+}
+
+@-webkit-keyframes click {
+  from {background-color: #0004;}
+  to {background-color: #0002;}
+}
+
+@keyframes click {
+  from {background-color: #0004;}
+  to {background-color: #0002;}
+}

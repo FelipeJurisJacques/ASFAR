@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+     width="24px" height="24px"
+     viewBox="0 0 100 100"
+     zoomAndPan="enable" >
+
+     <rect x="10" y="10" width="30" height="30" fill="#FFF"/>
+     <rect x="10" y="60" width="30" height="30" fill="#FFF"/>
+
+     <rect x="60" y="10" width="30" height="30" fill="#FFF"/>
+     <rect x="60" y="60" width="30" height="30" fill="#FFF"/>
+</svg>

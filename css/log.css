@@ -1,0 +1,28 @@
+p.log {
+    background-color: black;
+    color: green;
+    font-size: 14px;
+    width: 100%;
+    min-height: 100px;
+    border-top: 25px solid blue;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+p.log:before {
+    position: absolute;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    content: 'javaScript indexedDB';
+    background-color: blue;
+    color: white;
+    -webkit-transform: translate(10px, -22px);
+    transform: translate(10px, -22px);
+}
+
+p.log span.cursor {
+    content: url('../icon/logCursor.svg');
+}
+
+p.log span.error {
+    color: red;
+}

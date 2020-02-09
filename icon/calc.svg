@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30px" height="30px" viewBox="0 0 100 100" zoomAndPan="enable" >
+    <rect x='10' y='10' width='80' height='20' fill='silver'/>
+    <rect x='10' y='45' width='20' height='20' fill='silver'/>
+    <rect x='10' y='80' width='20' height='20' fill='silver'/>
+    <rect x='40' y='45' width='20' height='20' fill='silver'/>
+    <rect x='40' y='80' width='20' height='20' fill='silver'/>
+    <rect x='70' y='45' width='20' height='20' fill='silver'/>
+    <rect x='70' y='80' width='20' height='20' fill='silver'/>
+</svg>

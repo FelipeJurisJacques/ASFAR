@@ -1,0 +1,31 @@
+div.obs {
+    background: #7F7F7F;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    color: #FFF;
+}
+
+div.obs:before {
+    position: absolute;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    content: '';
+    width: 0;
+    height: 0;
+}
+
+div.obs:not(.top):before {
+    -webkit-transform: translate(-11px, 50%);
+    transform: translate(-11px, 50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #7F7F7F;
+}
+
+div.obs.top:before {
+    -webkit-transform: translate(24px, -7px);
+    transform: translate(24px, -7px);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid #7F7F7F;
+}

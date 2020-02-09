@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="icon/logo-192.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="icon/logo-192.png" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <title>ASFAR</title>
+</head>
+
+<body>
+    <div class="menu" tabindex="0">
+        <div class="activitybar" id="activitybar">
+            <label for="list-1"><img id="b1" src="icon/project.svg"></label>
+            <label for="list-2"><img id="b2" src="icon/package.svg"></label>
+            <label for="list-3"><img id="b3" src="icon/calc.svg"></label>
+            <label id="bt"><img src="icon/theme.svg"></label>
+            <label id="install" hidden><img id="b3" src="icon/install.svg"></label>
+        </div>
+        <div>
+            <input type="radio" name="choose" id="list-1" checked>
+            <div class="items list-1">
+                <button data-href="./projeto/novo/index.html">Novo Projeto</button>
+                <button data-href="./projeto/importar/index.html">Carregar Projeto</button>
+                <button data-href="./projeto/exportar/index.html">Salvar Projeto</button>
+                <button data-href="./cliente/lista/index.html">Listar clientes</button>
+                <button data-href="./cliente/editar/index.html">Cadastrar cliente</button>
+                <button data-href="./about/index.html">About</button>
+            </div>
+            <input type="radio" name="choose" id="list-2">
+            <div class="items list-2">
+                <button data-href="./configuracao/lista/index.html" title="Grupo de configurações / manual / pesquisa">Listar
+                    configurações</button>
+                <button data-href="./configuracao/editar/index.html"
+                    title="Grupo de configurações / manual / pesquisa">Adicionar configuracões</button>
+            </div>
+            <input type="radio" name="choose" id="list-3">
+            <div class="items list-3">
+                <button data-href="./calculadora/prnt/index.html">Calculadora de PRNT</button>
+                <button data-href="./calculadora/mehlich/index.html">Conversor de mehlich</button>
+            </div>
+        </div>
+        <div class="bottombar">
+            <div class="Lfont" id="console"></div>
+        </div>
+        <div class="menu-trigger">
+            <img src="icon/menu.svg">
+        </div>
+    </div>
+
+    <main>
+        <div class="navbar" tabindex="0">
+            <div class="trigger"></div>
+            <div class="content">
+                <div></div>
+            </div>
+        </div>
+        <div class="container">
+            <header></header>
+        </div>
+    </main>
+</body>
+
+<script type="module" src="script/app.js"></script>
+
+</html>

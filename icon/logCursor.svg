@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+    width="14px" height="14px"
+    viewBox="0 0 14 14"
+    zoomAndPan="enable" >
+
+    <text x="1" y="10" fill="transparent" >\
+        <animate 
+            attributeName="fill"
+            dur="300ms" 
+            repeatCount="indefinite"
+            keyTimes="0;0.25"
+            calcMode="discrete"
+            values="green;transparent"
+        />
+    </text>
+
+    <text x="1" y="10" fill="transparent" >|
+        <animate 
+            attributeName="fill"
+            dur="300ms" 
+            repeatCount="indefinite"
+            keyTimes="0;0.25;0.5"
+            calcMode="discrete"
+            values="transparent;green;transparent"
+        />
+    </text>
+
+    <text x="1" y="10" fill="transparent" >/
+        <animate 
+            attributeName="fill"
+            dur="300ms" 
+            repeatCount="indefinite"
+            keyTimes="0;0.5;0.75"
+            calcMode="discrete"
+            values="transparent;green;transparent"
+        />
+    </text>
+
+    <text x="1" y="10" fill="transparent" >-
+        <animate 
+            attributeName="fill"
+            dur="300ms" 
+            repeatCount="indefinite"
+            keyTimes="0;0.75"
+            calcMode="discrete"
+            values="transparent;green"
+        />
+    </text>
+</svg>

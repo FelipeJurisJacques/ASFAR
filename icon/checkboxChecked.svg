@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+     width="14px" height="14px"
+     viewBox="0 0 10 10"
+     zoomAndPan="enable" >
+
+    <line x1="1" y1="5" x2="4" y2="9" style="stroke:#FFF;stroke-width:1"/>
+    <line x1="4" y1="9" x2="9" y2="1" style="stroke:#FFF;stroke-width:1"/>
+</svg>
